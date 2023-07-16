@@ -1,0 +1,3 @@
+class {{usecaseName.pascalCase()}}Input{
+    
+}
