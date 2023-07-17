@@ -9,9 +9,14 @@ class {{pageName.pascalCase()}}Injector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-       return ChangeNotifierProvider(
-      create: (_) => getIt<{{pageName.pascalCase()}}ViewModel>(),
-      child: const {{pageName.pascalCase()}}Screen(),
-    );
-  }
+
+    return MultiProvider(
+          providers: [
+            ChangeNotifierProvider(create: (_) => getIt<{{pageName.pascalCase()}}ViewModel>),
+          ],
+          child:  const {{pageName.pascalCase()}}Screen(),
+        );
+
+          
+      }
 }
